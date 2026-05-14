@@ -331,6 +331,7 @@
   font-family: var(--font-serif);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 300;
+  color: var(--paper);
   margin-bottom: 1rem;
 }
 
