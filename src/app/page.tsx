@@ -1,66 +1,265 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import React from 'react';
+import Header from '@/components/Header';
+import HeroSection from '@/components/HeroSection';
+import DestinationCard from '@/components/DestinationCard';
+import TimelineCard from '@/components/TimelineCard';
+import TimelineProgress from '@/components/TimelineProgress';
+import ContactForm from '@/components/ContactForm';
+import Footer from '@/components/Footer';
+import Reveal from '@/components/Reveal';
+import {
+  Handshake,
+  ShieldCheck,
+  Compass,
+  ClipboardCheck,
+  MessagesSquare,
+  Stamp,
+  PlaneTakeoff,
+} from 'lucide-react';
+import styles from './page.module.css';
+
+type Destination = {
+  country: string;
+  city: string;
+  flag: string;
+  course: string;
+  features: string[];
+  imageUrl: string;
+  featured?: boolean;
+};
 
 export default function Home() {
+  const destinations: Destination[] = [
+    {
+      country: 'Georgia',
+      city: 'Tbilisi · Batumi',
+      flag: '\u{1F1EC}\u{1F1EA}',
+      imageUrl: '/dest-georgia.png',
+      course: 'MD · 6 years · English medium',
+      features: [
+        'European credit transfer (ECTS)',
+        'NMC & WFME recognised faculties',
+        'No entrance exam beyond NEET qualification',
+      ],
+      featured: true,
+    },
+    {
+      country: 'Uzbekistan',
+      city: 'Tashkent · Samarkand · Andijan',
+      flag: '\u{1F1FA}\u{1F1FF}',
+      imageUrl: '/dest-uzbekistan.png',
+      course: 'MBBS · 5–6 years · English medium',
+      features: [
+        'WHO-listed state medical institutes',
+        'Lowest cost of living in our roster',
+        'Strong Indian student community on campus',
+      ],
+      featured: true,
+    },
+    {
+      country: 'India',
+      city: 'Domestic placements',
+      flag: '\u{1F1EE}\u{1F1F3}',
+      imageUrl: '/dest-india.png',
+      course: 'UG & PG · NMC accredited',
+      features: ['NMC recognised', 'Top private colleges', 'Counselling support'],
+    },
+    {
+      country: 'Russia',
+      city: 'Multiple cities',
+      flag: '\u{1F1F7}\u{1F1FA}',
+      imageUrl: '/dest-russia.png',
+      course: 'MBBS · 6 years · English medium',
+      features: ['State universities', 'Affordable tuition', 'Strong infrastructure'],
+    },
+    {
+      country: 'Philippines',
+      city: 'Manila · Cebu',
+      flag: '\u{1F1F5}\u{1F1ED}',
+      imageUrl: '/dest-philippines.png',
+      course: 'MD · US-pattern curriculum',
+      features: ['American education system', 'High FMGE pass rate', 'BS + MD pathway'],
+    },
+    {
+      country: 'Bangladesh',
+      city: 'Dhaka · Chittagong',
+      flag: '\u{1F1E7}\u{1F1E9}',
+      imageUrl: '/dest-georgia.png', // Placeholder
+      course: 'MBBS · 5 years + internship',
+      features: ['Syllabus close to India', 'High clinical exposure', 'Cultural familiarity'],
+    },
+  ];
+
+  const services = [
+    {
+      num: '01',
+      title: 'Profile evaluation',
+      desc: 'We assess your NEET score, academic record and budget to map a realistic shortlist — not a brochure of every university we can sign up for.',
+      Icon: ClipboardCheck,
+    },
+    {
+      num: '02',
+      title: 'Admissions counselling',
+      desc: 'A senior counsellor walks you and your family through each option face to face, weighing fees, recognition, climate and FMGE outcomes.',
+      Icon: MessagesSquare,
+    },
+    {
+      num: '03',
+      title: 'Documentation & visa',
+      desc: 'Admission letters, apostille, embassy filings and student visas — handled by an in-house team that has done this thousands of times.',
+      Icon: Stamp,
+    },
+    {
+      num: '04',
+      title: 'Travel & settling-in',
+      desc: 'Airport pickup, hostel allotment, local SIM, first-week orientation. The unglamorous things that decide whether a student stays the course.',
+      Icon: PlaneTakeoff,
+    },
+  ];
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <div className={styles.curtainWrap}>
+      <Header />
+      <main>
+        <HeroSection />
+
+        <section id="destinations" className={`section ${styles.destinations}`}>
+          <div className="container">
+            <Reveal>
+              <header className="section-head">
+                <span className="eyebrow">Where we place students</span>
+                <h2 className="section-title">
+                  Global destinations. Exceptional medical <em>opportunities.</em>
+                </h2>
+                <p className="section-lede">
+                  We provide expert advisory for top-tier medical universities across
+                  the globe—ensuring our students receive end-to-end support, from
+                  initial orientation through to their final internship.
+                </p>
+              </header>
+            </Reveal>
+
+            <div className={styles.destGrid}>
+              {destinations.map((dest, idx) => (
+                <Reveal key={dest.country} delay={idx * 90} direction="up" distance={36}>
+                  <DestinationCard
+                    index={idx + 1}
+                    country={dest.country}
+                    city={dest.city}
+                    flag={dest.flag}
+                    course={dest.course}
+                    features={dest.features}
+                    featured={dest.featured}
+                    imageUrl={dest.imageUrl}
+                  />
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className={styles.services}>
+          <div className="container">
+            <Reveal>
+              <header className={styles.servicesHead}>
+                <span className={styles.servicesEyebrow}>How we work</span>
+                <h2 className={styles.servicesTitle}>
+                  A small practice, <em>handled carefully.</em>
+                </h2>
+                <p className={styles.servicesLede}>
+                  From your very first call to your first day at university — four clear steps, one dedicated team.
+                </p>
+              </header>
+            </Reveal>
+
+            <TimelineProgress className={styles.servicesTimeline}>
+              {services.map((service, idx) => {
+                const Icon = service.Icon;
+                const isEven = idx % 2 === 0;
+                return (
+                  <TimelineCard
+                    key={service.num}
+                    num={service.num}
+                    title={service.title}
+                    desc={service.desc}
+                    icon={<Icon size={32} strokeWidth={1.25} />}
+                    isLast={idx === services.length - 1}
+                    isEven={isEven}
+                    delay={idx * 100}
+                  />
+                );
+              })}
+            </TimelineProgress>
+          </div>
+        </section>
+
+        <section id="contact" className={styles.contact}>
+          {/* Ambient floating orbs */}
+          <div className={styles.contactBg} aria-hidden />
+          <div className={styles.contactOrb1} aria-hidden />
+          <div className={styles.contactOrb2} aria-hidden />
+
+          {/* Main grid */}
+          <div className={`container ${styles.contactGrid}`}>
+            <Reveal direction="up" distance={32}>
+              <div className={styles.contactInfo}>
+                <span className={styles.contactEyebrow}>Get in Touch</span>
+                <h2 className={styles.contactTitle}>
+                  A short conversation is the <em>right first step.</em>
+                </h2>
+                <p className={styles.contactDesc}>
+                  Tell us a little about your aspirations. A senior counsellor will review your profile and respond within one working day — usually the same evening.
+                </p>
+
+                {/* Response badge */}
+                <div className={styles.responseBadge}>
+                  <span className={styles.responseDot} />
+                  <span>Avg. response time: <strong>4 hours</strong></span>
+                </div>
+
+                <div className={styles.trustMarkers}>
+                  <div className={styles.marker}>
+                    <div className={styles.markerIcon}>
+                      <Handshake size={20} strokeWidth={1.5} />
+                    </div>
+                    <div>
+                      <h4>Direct Admissions</h4>
+                      <p>We work directly with universities — no middle-men, no hidden costs, no sub-agents.</p>
+                    </div>
+                  </div>
+                  <div className={styles.marker}>
+                    <div className={styles.markerIcon}>
+                      <ShieldCheck size={20} strokeWidth={1.5} />
+                    </div>
+                    <div>
+                      <h4>NMC & WHO Verified</h4>
+                      <p>Every university in our roster carries full NMC and WHO recognition.</p>
+                    </div>
+                  </div>
+                  <div className={styles.marker}>
+                    <div className={styles.markerIcon}>
+                      <Compass size={20} strokeWidth={1.5} />
+                    </div>
+                    <div>
+                      <h4>End-to-End Mentorship</h4>
+                      <p>From NEET counselling to FMGE prep — we stay with you through the entire 6-year journey.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal direction="up" distance={32} delay={200}>
+              <div className={styles.formContainer}>
+                <ContactForm />
+              </div>
+            </Reveal>
+          </div>
+        </section>
       </main>
-    </div>
+      </div>
+      <Footer curtain />
+    </>
   );
 }
