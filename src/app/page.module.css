@@ -309,8 +309,9 @@
 
 /* Responsive */
 @media (max-width: 900px) {
-  .servicesTimeline::before {
-    left: 24px;
+  .servicesTimeline::before,
+  .servicesTimeline::after {
+    left: 28px;
   }
 
   .timelineStep {
