@@ -73,20 +73,20 @@ export default function Home() {
       features: ['State universities', 'Affordable tuition', 'Strong infrastructure'],
     },
     {
-      country: 'Philippines',
-      city: 'Manila · Cebu',
-      flag: '\u{1F1F5}\u{1F1ED}',
-      imageUrl: '/dest-philippines.png',
-      course: 'MD · US-pattern curriculum',
-      features: ['American education system', 'High FMGE pass rate', 'BS + MD pathway'],
+      country: 'Egypt',
+      city: 'Cairo · Alexandria',
+      flag: '🇪🇬',
+      imageUrl: '/dest-egypt.png',
+      course: 'MBBS · 5 years + 2 years internship',
+      features: ['World-class clinical exposure', 'Affordable tuition fees', 'English medium instruction'],
     },
     {
-      country: 'Bangladesh',
-      city: 'Dhaka · Chittagong',
-      flag: '\u{1F1E7}\u{1F1E9}',
-      imageUrl: '/dest-georgia.png', // Placeholder
-      course: 'MBBS · 5 years + internship',
-      features: ['Syllabus close to India', 'High clinical exposure', 'Cultural familiarity'],
+      country: 'Vietnam',
+      city: 'Hanoi · Ho Chi Minh City',
+      flag: '🇻🇳',
+      imageUrl: '/dest-vietnam.png',
+      course: 'MBBS · 6 years',
+      features: ['High-tech medical facilities', 'Safe environment for students', 'Growing international community'],
     },
   ];
 
