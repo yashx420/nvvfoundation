@@ -14,34 +14,34 @@ export const metadata = {
 export default function CoursesPage() {
   const ugDestinations = [
     {
-      country: 'Bangladesh',
-      desc: 'Robust medical curriculum and English-taught programs. Low cost of living makes it highly popular.',
-      image: 'url(/dest-bangladesh.png)',
+      country: 'Georgia',
+      desc: 'European standard education, credit transfer (ECTS), and world-class, globally recognized medical faculties.',
+      image: 'url(/dest-georgia.png)',
     },
     {
-      country: 'China',
-      desc: 'World-renowned medical universities offering state-of-the-art facilities and comprehensive curricula.',
-      image: 'url(/dest-china.png)',
-    },
-    {
-      country: 'Kazakhstan & Kyrgyzstan',
-      desc: 'Quality education at affordable costs. Programs designed to meet international standards.',
-      image: 'url(/dest-kazakhstan.png)',
-    },
-    {
-      country: 'Nepal',
-      desc: 'Exceptional medical education system. Proximity to India makes it highly convenient.',
-      image: 'url(/dest-nepal.png)',
-    },
-    {
-      country: 'Philippines',
-      desc: 'US-based curriculum and English language instruction. Globally recognized degrees.',
-      image: 'url(/dest-philippines.png)',
-    },
-    {
-      country: 'Russia & Uzbekistan',
-      desc: 'Strong emphasis on research and clinical practice. Modern facilities and rigorous education.',
+      country: 'Uzbekistan',
+      desc: 'Highly affordable medical education at WHO-listed state institutes with a welcoming, vibrant student community.',
       image: 'url(/dest-uzbekistan.png)',
+    },
+    {
+      country: 'India',
+      desc: 'Explore placements in top domestic private medical colleges with comprehensive, expert counselling support.',
+      image: 'url(/dest-india.png)',
+    },
+    {
+      country: 'Russia',
+      desc: 'Rigorous training at prestigious state universities featuring superb clinical infrastructure and affordable fees.',
+      image: 'url(/dest-russia.png)',
+    },
+    {
+      country: 'Egypt',
+      desc: 'Renowned English-taught programs providing world-class clinical exposure and highly affordable tuition fees.',
+      image: 'url(/dest-egypt.png)',
+    },
+    {
+      country: 'Vietnam',
+      desc: 'Safe student environments with high-tech medical facilities, modern hospitals, and global exposure.',
+      image: 'url(/dest-vietnam.png)',
     },
   ];
 
