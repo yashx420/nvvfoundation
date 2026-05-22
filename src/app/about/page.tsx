@@ -300,10 +300,10 @@ export default function AboutPage() {
             <h2 className={styles.ctaTitle}>
               Ready to begin your medical journey?
             </h2>
-            <a href="https://nvvfoundation.vercel.app/contact" className={`btn ${styles.ctaBtn}`}>
+            <Link href="/contact" className={`btn ${styles.ctaBtn}`}>
               <span>Book a free consultation</span>
               <ArrowUpRight size={16} strokeWidth={1.75} />
-            </a>
+            </Link>
           </div>
         </section>
       </main>

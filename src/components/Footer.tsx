@@ -75,7 +75,7 @@ const Footer = ({ curtain = false }: FooterProps) => {
                 <li><Link href="/about">About</Link></li>
                 <li><Link href="/courses">Courses</Link></li>
                 <li><Link href="/blogs">Insights</Link></li>
-                <li><a href="https://nvvfoundation.vercel.app/contact">Contact</a></li>
+                <li><Link href="/contact">Contact</Link></li>
               </ul>
             </div>
 
