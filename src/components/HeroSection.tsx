@@ -97,7 +97,7 @@ const HeroSection = () => {
 
         <div className={styles.actions}>
           <Link href="/apply" className={`btn ${styles.cta}`}>
-            <span>Apply Now &mdash; ₹30,000 INR</span>
+            <span>Apply Now</span>
             <ArrowUpRight size={16} strokeWidth={1.75} />
           </Link>
           <Link href="#contact" className={styles.ghost}>

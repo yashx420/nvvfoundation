@@ -234,20 +234,41 @@ export default function ApplyPage() {
                       <span className={styles.pricePeriod}>INR</span>
                     </div>
                   </div>
-                  <ul className={styles.pricingFeatures}>
-                    <li>
-                      <CheckCircle2 size={16} className={styles.checkIcon} />
-                      <span>Direct Admissions counseling & review</span>
-                    </li>
-                    <li>
-                      <CheckCircle2 size={16} className={styles.checkIcon} />
-                      <span>NMC & WHO Eligibility Verification</span>
-                    </li>
-                    <li>
-                      <CheckCircle2 size={16} className={styles.checkIcon} />
-                      <span>End-to-End Documentation vetting</span>
-                    </li>
-                  </ul>
+
+                  <div className={styles.breakdownSection}>
+                    <h4 className={styles.breakdownTitle}>Advisory Fee Breakdown</h4>
+                    
+                    <div className={styles.breakdownItem}>
+                      <div className={styles.breakdownHeader}>
+                        <span>1. Eligibility & Vetting</span>
+                        <strong>₹10,000</strong>
+                      </div>
+                      <p className={styles.breakdownDesc}>
+                        Comprehensive profile evaluation, verification against NMC/WHO criteria, and academic eligibility mapping.
+                      </p>
+                    </div>
+
+                    <div className={styles.breakdownItem}>
+                      <div className={styles.breakdownHeader}>
+                        <span>2. Document Apostille & Legals</span>
+                        <strong>₹12,000</strong>
+                      </div>
+                      <p className={styles.breakdownDesc}>
+                        Apostille processing with the Ministry of External Affairs (MEA), translation of transcripts, and notary certificates.
+                      </p>
+                    </div>
+
+                    <div className={styles.breakdownItem}>
+                      <div className={styles.breakdownHeader}>
+                        <span>3. University Portal & Counseling</span>
+                        <strong>₹8,000</strong>
+                      </div>
+                      <p className={styles.breakdownDesc}>
+                        Direct university application filing, secure portal configuration, and pre-departure advisory counseling sessions.
+                      </p>
+                    </div>
+                  </div>
+
                   <div className={styles.secureBadge}>
                     <CreditCard size={14} />
                     <span>Secure Payment via Encrypted Gateway</span>
@@ -650,7 +671,7 @@ export default function ApplyPage() {
           </div>
         </main>
       </div>
-      <Footer curtain={true} />
+      <Footer />
     </>
   );
 }
