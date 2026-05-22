@@ -11,14 +11,14 @@ const marqueeItems = [
   'Uzbekistan',
   'India',
   'Russia',
-  'Philippines',
-  'Bangladesh',
+  'Egypt',
+  'Vietnam',
   'Georgia',
   'Uzbekistan',
   'India',
   'Russia',
-  'Philippines',
-  'Bangladesh',
+  'Egypt',
+  'Vietnam',
 ];
 
 const HeroSection = () => {
@@ -113,12 +113,12 @@ const HeroSection = () => {
           <div className={styles.statDivider} aria-hidden />
           <div className={styles.stat}>
             <dt>Students placed</dt>
-            <dd>2,400<span className={styles.statSuffix}>+</span></dd>
+            <dd>400<span className={styles.statSuffix}>+</span></dd>
           </div>
           <div className={styles.statDivider} aria-hidden />
           <div className={styles.stat}>
             <dt>Partner universities</dt>
-            <dd>40<span className={styles.statSuffix}>+</span></dd>
+            <dd>15<span className={styles.statSuffix}>+</span></dd>
           </div>
           <div className={styles.statDivider} aria-hidden />
           <div className={styles.stat}>
