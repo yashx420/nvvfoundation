@@ -51,11 +51,18 @@ const Header = () => {
 
           {/* Desktop nav */}
           <nav className={styles.nav}>
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className={styles.navLink}>
-                <span className={styles.navText}>{link.label}</span>
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isExternal = link.href.startsWith('http');
+              return isExternal ? (
+                <a key={link.href} href={link.href} className={styles.navLink}>
+                  <span className={styles.navText}>{link.label}</span>
+                </a>
+              ) : (
+                <Link key={link.href} href={link.href} className={styles.navLink}>
+                  <span className={styles.navText}>{link.label}</span>
+                </Link>
+              );
+            })}
           </nav>
 
           {/* CTA + Mobile toggle */}
@@ -81,20 +88,36 @@ const Header = () => {
       {/* Mobile overlay */}
       <div className={`${styles.mobileOverlay} ${mobileOpen ? styles.mobileOpen : ''}`}>
         <nav className={styles.mobileNav}>
-          {navLinks.map((link, i) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={styles.mobileLink}
-              style={{ animationDelay: `${100 + i * 60}ms` }}
-              onClick={() => setMobileOpen(false)}
-            >
-              <span className={styles.mobileLinkNum}>
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link, i) => {
+            const isExternal = link.href.startsWith('http');
+            return isExternal ? (
+              <a
+                key={link.href}
+                href={link.href}
+                className={styles.mobileLink}
+                style={{ animationDelay: `${100 + i * 60}ms` }}
+                onClick={() => setMobileOpen(false)}
+              >
+                <span className={styles.mobileLinkNum}>
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={styles.mobileLink}
+                style={{ animationDelay: `${100 + i * 60}ms` }}
+                onClick={() => setMobileOpen(false)}
+              >
+                <span className={styles.mobileLinkNum}>
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                {link.label}
+              </Link>
+            );
+          })}
             <Link href="/apply" className={styles.mobileCta}
             style={{ animationDelay: '400ms' }}
             onClick={() => setMobileOpen(false)}

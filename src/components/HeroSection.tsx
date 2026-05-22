@@ -100,9 +100,9 @@ const HeroSection = () => {
             <span>Apply Now</span>
             <ArrowUpRight size={16} strokeWidth={1.75} />
           </Link>
-          <Link href="https://nvvfoundation.vercel.app/contact" className={styles.ghost}>
+          <a href="https://nvvfoundation.vercel.app/contact" className={styles.ghost}>
             Book a consultation
-          </Link>
+          </a>
         </div>
 
         <dl className={styles.stats}>
