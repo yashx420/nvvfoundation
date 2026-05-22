@@ -100,7 +100,7 @@ export default function CoursesPage() {
 
               <Reveal delay={200}>
                 <div className={styles.ctaWrap}>
-                  <Link href="/contact" className={styles.applyBtn}>
+                  <Link href="/apply" className={styles.applyBtn}>
                     Apply for UG Courses <ArrowRight size={16} />
                   </Link>
                 </div>
@@ -151,7 +151,7 @@ export default function CoursesPage() {
 
               <Reveal delay={400}>
                 <div className={styles.ctaWrap}>
-                  <Link href="/contact" className={styles.applyBtn}>
+                  <Link href="/apply" className={styles.applyBtn}>
                     Apply for PG Courses <ArrowRight size={16} />
                   </Link>
                 </div>

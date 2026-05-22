@@ -28,7 +28,7 @@ const Header = () => {
     { href: '/about', label: 'About' },
     { href: '/courses', label: 'Courses' },
     { href: '/blogs', label: 'Blogs' },
-    { href: '/contact', label: 'Contact' },
+    { href: 'https://nvvfoundation.vercel.app/contact', label: 'Contact' },
   ];
 
   return (
@@ -60,7 +60,7 @@ const Header = () => {
 
           {/* CTA + Mobile toggle */}
           <div className={styles.actions}>
-            <Link href="/contact" className={styles.applyBtn}>
+            <Link href="/apply" className={styles.applyBtn}>
               <span>Apply Now</span>
               <ArrowUpRight size={14} strokeWidth={2} />
             </Link>
@@ -95,7 +95,7 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
-            <Link href="/contact" className={styles.mobileCta}
+            <Link href="/apply" className={styles.mobileCta}
             style={{ animationDelay: '400ms' }}
             onClick={() => setMobileOpen(false)}
           >
