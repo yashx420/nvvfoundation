@@ -59,7 +59,7 @@ const Footer = ({ curtain = false }: FooterProps) => {
             </Link>
             <p className={styles.desc}>
               Admissions advisory for Indian students pursuing medicine abroad.
-              Specialists in Georgia &amp; Uzbekistan.
+              Specialists in Georgia, Uzbekistan, India, Russia, Egypt, and Vietnam.
             </p>
             <div className={styles.socials}>
               <a href="#" aria-label="Website"><Globe size={16} /></a>
@@ -84,8 +84,10 @@ const Footer = ({ curtain = false }: FooterProps) => {
               <ul className={styles.list}>
                 <li><Link href="/courses">Georgia</Link></li>
                 <li><Link href="/courses">Uzbekistan</Link></li>
+                <li><Link href="/courses">India</Link></li>
                 <li><Link href="/courses">Russia</Link></li>
-                <li><Link href="/courses">Philippines</Link></li>
+                <li><Link href="/courses">Egypt</Link></li>
+                <li><Link href="/courses">Vietnam</Link></li>
               </ul>
             </div>
 

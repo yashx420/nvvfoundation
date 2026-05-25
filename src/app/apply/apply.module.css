@@ -733,3 +733,136 @@
   line-height: 1.4;
   color: rgba(246, 241, 231, 0.6);
 }
+
+/* ---------- Visibility improvements for payment methods ---------- */
+.paymentBox {
+  /* slightly stronger background so text contrasts better */
+  background: linear-gradient(180deg, rgba(44,164,165,0.06), rgba(16,42,76,0.04));
+  border: 1px solid rgba(44,164,165,0.12);
+}
+
+.bankValue {
+  color: var(--paper);
+  font-weight: 700;
+}
+
+.method {
+  padding: 0.45rem 0.25rem;
+  border-radius: 6px;
+  transition: background 200ms ease;
+}
+
+.method:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+.methodIcon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--teal);
+  border: 1px solid rgba(44,164,165,0.12);
+  box-shadow: 0 8px 22px rgba(16,42,76,0.18);
+}
+
+.methodIcon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.methodLabel {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff !important;
+}
+
+.methodValue {
+  font-size: 1rem;
+  color: #ffffff !important;
+  font-weight: 800;
+}
+
+/* ---------- Styled Payment Details ---------- */
+.paymentBox {
+  background: linear-gradient(180deg, rgba(44, 164, 165, 0.04), rgba(16, 42, 76, 0.02));
+  border: 1px solid rgba(44, 164, 165, 0.08);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.bankList {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.bankRow {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .bankRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bankLabel {
+  font-size: 0.75rem;
+  color: var(--teal-soft);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.bankValue {
+  font-size: 0.95rem;
+  color: var(--paper);
+  word-break: break-word;
+}
+
+.paymentMethods {
+  display: flex;
+  gap: 0.6rem;
+  flex-direction: column;
+  margin-top: 0.25rem;
+}
+
+.method {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.methodIcon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  background: rgba(246, 241, 231, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(16, 42, 76, 0.04);
+  color: var(--paper);
+}
+
+.methodLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.methodValue {
+  font-size: 0.95rem;
+  color: var(--paper);
+}

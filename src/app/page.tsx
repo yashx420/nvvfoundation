@@ -31,6 +31,14 @@ type Destination = {
 export default function Home() {
   const destinations: Destination[] = [
     {
+      country: 'Egypt',
+      city: 'Cairo · Alexandria',
+      flag: '🇪🇬',
+      imageUrl: '/dest-egypt.png',
+      course: 'MBBS · 5 years + 2 years internship',
+      features: ['World-class clinical exposure', 'Affordable tuition fees', 'English medium instruction'],
+    },
+    {
       country: 'Georgia',
       city: 'Tbilisi · Batumi',
       flag: '\u{1F1EC}\u{1F1EA}',
@@ -40,19 +48,6 @@ export default function Home() {
         'European credit transfer (ECTS)',
         'NMC & WFME recognised faculties',
         'No entrance exam beyond NEET qualification',
-      ],
-      featured: true,
-    },
-    {
-      country: 'Uzbekistan',
-      city: 'Tashkent · Samarkand · Andijan',
-      flag: '\u{1F1FA}\u{1F1FF}',
-      imageUrl: '/dest-uzbekistan.png',
-      course: 'MBBS · 5–6 years · English medium',
-      features: [
-        'WHO-listed state medical institutes',
-        'Lowest cost of living in our roster',
-        'Strong Indian student community on campus',
       ],
       featured: true,
     },
@@ -73,12 +68,17 @@ export default function Home() {
       features: ['State universities', 'Affordable tuition', 'Strong infrastructure'],
     },
     {
-      country: 'Egypt',
-      city: 'Cairo · Alexandria',
-      flag: '🇪🇬',
-      imageUrl: '/dest-egypt.png',
-      course: 'MBBS · 5 years + 2 years internship',
-      features: ['World-class clinical exposure', 'Affordable tuition fees', 'English medium instruction'],
+      country: 'Uzbekistan',
+      city: 'Tashkent · Samarkand · Andijan',
+      flag: '\u{1F1FA}\u{1F1FF}',
+      imageUrl: '/dest-uzbekistan.png',
+      course: 'MBBS · 5–6 years · English medium',
+      features: [
+        'WHO-listed state medical institutes',
+        'Lowest cost of living in our roster',
+        'Strong Indian student community on campus',
+      ],
+      featured: true,
     },
     {
       country: 'Vietnam',

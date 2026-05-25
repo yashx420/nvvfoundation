@@ -73,6 +73,7 @@ type FormData = {
   phone: string;
   gender: string;
   guardianName: string;
+  guardianPhone: string;
   neetScore: string;
   neetYear: string;
   pcbPercent: string;
@@ -92,6 +93,7 @@ const initialFormData: FormData = {
   phone: '',
   gender: '',
   guardianName: '',
+  guardianPhone: '',
   neetScore: '',
   neetYear: new Date().getFullYear().toString(),
   pcbPercent: '',
@@ -134,6 +136,11 @@ export default function ApplyPage() {
       }
       if (!formData.gender) newErrors.gender = 'Gender selection is required';
       if (!formData.guardianName.trim()) newErrors.guardianName = "Guardian's Name is required";
+      if (!formData.guardianPhone.trim()) {
+        newErrors.guardianPhone = "Guardian's Mobile Number is required";
+      } else if (!/^[0-9]{10}$/.test(formData.guardianPhone.replace(/[\s\-+]/g, '').slice(-10))) {
+        newErrors.guardianPhone = 'Please enter a valid 10-digit mobile number';
+      }
     }
 
     if (currentStep === 2) {
@@ -222,7 +229,7 @@ export default function ApplyPage() {
                   Start Your Medical <em>Career</em> Abroad
                 </h1>
                 <p className={styles.desc}>
-                  Secure your direct clinical placements, verified NMC-listed institutions, and hassle-free visa processing with National Videsh Vidya Foundation.
+                  Secure direct clinical placements at institutions compliant with NMC guidelines, plus hassle-free visa processing with National Videsh Vidya Foundation.
                 </p>
 
                 <div className={styles.pricingCard}>
@@ -236,36 +243,84 @@ export default function ApplyPage() {
                   </div>
 
                   <div className={styles.breakdownSection}>
-                    <h4 className={styles.breakdownTitle}>Advisory Fee Breakdown</h4>
-                    
-                    <div className={styles.breakdownItem}>
-                      <div className={styles.breakdownHeader}>
-                        <span>1. Eligibility & Vetting</span>
-                        <strong>₹10,000</strong>
-                      </div>
-                      <p className={styles.breakdownDesc}>
-                        Comprehensive profile evaluation, verification against NMC/WHO criteria, and academic eligibility mapping.
-                      </p>
-                    </div>
+                    <h4 className={styles.breakdownTitle}>Payment & Refund Policy</h4>
 
-                    <div className={styles.breakdownItem}>
-                      <div className={styles.breakdownHeader}>
-                        <span>2. Document Apostille & Legals</span>
-                        <strong>₹12,000</strong>
-                      </div>
-                      <p className={styles.breakdownDesc}>
-                        Apostille processing with the Ministry of External Affairs (MEA), translation of transcripts, and notary certificates.
-                      </p>
-                    </div>
+                    <p className={styles.breakdownDesc}>
+                      The advisory fee is non‑refundable once an admission or invitation letter has been issued by any university or college.
+                    </p>
 
-                    <div className={styles.breakdownItem}>
-                      <div className={styles.breakdownHeader}>
-                        <span>3. University Portal & Counseling</span>
-                        <strong>₹8,000</strong>
+                    <h4 className={styles.breakdownTitle}>Payment Details</h4>
+
+                    <div className={styles.paymentBox}>
+                      <div className={styles.bankList}>
+                        <div className={styles.bankRow}>
+                          <div className={styles.bankLabel}>Account name</div>
+                          <div className={styles.bankValue}>NATIONAL VIDESH VIDYA FOUNDATION</div>
+                        </div>
+                        <div className={styles.bankRow}>
+                          <div className={styles.bankLabel}>Bank</div>
+                          <div className={styles.bankValue}>State Bank of India — JAYANAGAR 9th BLOCK (40299)</div>
+                        </div>
+                        <div className={styles.bankRow}>
+                          <div className={styles.bankLabel}>Account type</div>
+                          <div className={styles.bankValue}>CURRENT A/C</div>
+                        </div>
+                        <div className={styles.bankRow}>
+                          <div className={styles.bankLabel}>Account no</div>
+                          <div className={styles.bankValue}>37002572008</div>
+                        </div>
+                        <div className={styles.bankRow}>
+                          <div className={styles.bankLabel}>IFSC</div>
+                          <div className={styles.bankValue}>SBIN0040299</div>
+                        </div>
+                        <div className={styles.bankRow}>
+                          <div className={styles.bankLabel}>Branch / City</div>
+                          <div className={styles.bankValue}>Bangalore — 560069</div>
+                        </div>
                       </div>
-                      <p className={styles.breakdownDesc}>
-                        Direct university application filing, secure portal configuration, and pre-departure advisory counseling sessions.
-                      </p>
+
+                      <div className={styles.paymentMethods}>
+                        <div className={styles.method}>
+                          <div className={styles.methodIcon} aria-hidden>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                              <path d="M3 10l9-6 9 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                              <path d="M5 10v7h14v-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                              <path d="M10 14v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                              <path d="M14 14v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          </div>
+                          <div>
+                            <div className={styles.methodLabel}>Bank transfer</div>
+                            <div className={styles.methodValue}><strong>Account:</strong> 37002572008 • <strong>IFSC:</strong> SBIN0040299</div>
+                          </div>
+                        </div>
+
+                        <div className={styles.method}>
+                          <div className={styles.methodIcon} aria-hidden>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                              <rect x="7" y="2" width="10" height="20" rx="2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                              <circle cx="12" cy="18" r="1" fill="currentColor" />
+                            </svg>
+                          </div>
+                          <div>
+                            <div className={styles.methodLabel}>Google Pay</div>
+                            <div className={styles.methodValue}>9844757075</div>
+                          </div>
+                        </div>
+
+                        <div className={styles.method}>
+                          <div className={styles.methodIcon} aria-hidden>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                              <path d="M10 14a3 3 0 0 0 4 0l1-1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                              <path d="M14 10a3 3 0 0 0-4 0l-1 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          </div>
+                          <div>
+                            <div className={styles.methodLabel}>UPI</div>
+                            <div className={styles.methodValue}>ganeshcm1965@okhdfcbank</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -292,6 +347,7 @@ export default function ApplyPage() {
                       <p><strong>Course:</strong> {formData.course}</p>
                       <p><strong>Preferred University:</strong> {formData.university} ({formData.country})</p>
                       <p><strong>NEET Score:</strong> {formData.neetScore} ({formData.neetYear})</p>
+                        <p><strong>Guardian Mobile:</strong> {formData.guardianPhone}</p>
                     </div>
                     <p className={styles.successNextSteps}>
                       A senior admissions counsellor will contact you on <strong>{formData.phone}</strong> and email details to <strong>{formData.email}</strong> within 4 working hours.
@@ -418,6 +474,19 @@ export default function ApplyPage() {
                               className={errors.guardianName ? styles.inputError : ''}
                             />
                             {errors.guardianName && <span className={styles.errorMsg}><AlertCircle size={12} /> {errors.guardianName}</span>}
+                          </div>
+                          
+                          <div className={styles.inputGroup}>
+                            <label htmlFor="guardianPhone">Guardian's Mobile Number</label>
+                            <input
+                              type="tel"
+                              id="guardianPhone"
+                              placeholder="10-digit mobile number"
+                              value={formData.guardianPhone}
+                              onChange={e => updateField('guardianPhone', e.target.value)}
+                              className={errors.guardianPhone ? styles.inputError : ''}
+                            />
+                            {errors.guardianPhone && <span className={styles.errorMsg}><AlertCircle size={12} /> {errors.guardianPhone}</span>}
                           </div>
                         </div>
                       )}
